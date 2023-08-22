@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"esModuleInterop": true,
+		"target": "es6",
+		"moduleResolution": "node",
+		"sourceMap": true,
+		"outDir": "dist",
+		"baseUrl": ".",
+		"paths": {
+			"@dataBase": ["./src/database"],
+			"@global/*": ["./src/global/*"],
+			"@serverExpress": ["src/serverExpress"],
+			"@typeData": ["./src/typeData"],
+		}
+	},
+	"exclude": ["node_modules", "**/*.spec.ts"],
+	"include": ["src/**/*"],
+	"lib": ["es2015"]
+}
