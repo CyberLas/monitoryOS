@@ -1,0 +1,21 @@
+######################
+### UPLOAD DOCKER ###
+#####################
+
+# Node Modules
+**/node_modules
+*/node_modules
+/node_modules
+node_modules
+
+# Dist
+**/dist
+*/dist
+/dist
+dist
+
+# Changelog
+CHANGELOG.md
+
+# Git Ignore
+.gitignore

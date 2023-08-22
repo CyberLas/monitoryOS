@@ -1,7 +1,6 @@
 
 import systemInfo	from 'systeminformation'
-import * as dotenv from 'dotenv'
-dotenv.config()
+
 import './serverExpress'
 import { bytesToGB, mHzToGHz }	from './global'
 import { readRethink }			from './database'
