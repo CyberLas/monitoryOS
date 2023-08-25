@@ -1,14 +1,15 @@
 import express from 'express'
 
-const	app = express(),
-		port = 3000
+import { PORTSERVER } from '../global'
+
+const	app = express()
 
 app.get('/', (_: any, res: any) => {
 	res.send('Hello World!')
 })
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+app.listen(PORTSERVER, () => {
+    console.log(`Example app listening on port ${PORTSERVER}`)
 })
 
 export const server = app

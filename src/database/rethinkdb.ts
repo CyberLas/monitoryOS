@@ -1,10 +1,11 @@
 import * as rethinkdb from 'rethinkdb'
-import { readRenthinkDB } from  '@typeData'
+import { DBRETHINKDB, HOSTRETHINKDB, PORTRETHINKDB } from '../global'
+import { readRenthinkDB } from '@typeData'
 
 const	configRethinkdb = {
-			host: '192.168.1.95',
-			db	: 'rethinkDB',
-			port: 28015,
+			host: HOSTRETHINKDB,
+			port: PORTRETHINKDB,
+			db	: DBRETHINKDB,
 		}
 
 export const dbRenthink = rethinkdb.connect(configRethinkdb)
