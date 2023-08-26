@@ -5,12 +5,9 @@ import { table } from 'rethinkdb'
 import { cpuStatus, memoryStatus, networkStatus } from './monitory'
 import { dbRenthink } from './database/rethinkdb'
 
-(async() => {
-
-	// console.log({...await memoryParams, ...await diskParams, ...await cpuInformation})
-	
+(async() => {	
 	setInterval(async() => {
-		function formatNumberWithLeadingZero(number) {
+		const formatNumberWithLeadingZero = (number) => {
 			return number < 10 ? `0${number}` : `${number}`;
 		}
 		
@@ -28,7 +25,7 @@ import { dbRenthink } from './database/rethinkdb'
 				...await cpuStatus(),
 				...memoryStatus(),
 				...await networkStatus(),
-				currentTime: `${day}-${month}-${year} ${hours}:${minutes}.${seconds}`
+				currentTime: `${day}-${month}-${year} ${hours}:${minutes}:${seconds}`
 			},
 			{ returnChanges: true }
 		)

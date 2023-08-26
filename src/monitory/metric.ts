@@ -2,11 +2,10 @@ import os		from 'os'
 import ping		from 'ping'
 import osUtils	from 'os-utils'
 
-export	const cpuStatus = () : Promise<{ usedCPU: string; freeCPU: string }> => new Promise((resolve) => {
+export	const cpuStatus = () : Promise<{ usedCPU: string }> => new Promise((resolve) => {
 		osUtils.cpuUsage((value: any) => {
 			resolve({
-				usedCPU: `${(value * 100).toFixed(2)}%`,
-				freeCPU: `${(100 - Number(value * 100)).toFixed(2)}%`
+				usedCPU: `${(value * 100).toFixed(2)}%`
 			})
 		});
 	})
@@ -18,8 +17,7 @@ export	const memoryStatus = () => {
 				ramUsagePercentage = (usedMemory / totalMemory) * 100;
 
 		return {
-			usedRAM: `${ramUsagePercentage.toFixed(2)}%`,
-			freeRAM: `${100 - Number(ramUsagePercentage.toFixed(2))}%`
+			usedRAM: Number(ramUsagePercentage.toFixed(2))
 		}
 	}
 
